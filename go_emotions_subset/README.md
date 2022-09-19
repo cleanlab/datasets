@@ -2,8 +2,11 @@
 
 These datasets were curated from [GoEmotions](https://ai.googleblog.com/2021/10/goemotions-dataset-for-fine-grained.html) and augmented with [HuggingFace's](https://huggingface.co/blog/sentiment-analysis-python) sentiment analysis pipeline. GoEmotions is a corpus of 58k carefully curated comments extracted from Reddit, with human annotations to 27 emotion categories or Neutral.
 
-This subset contains only the 9 most frequent labels:<br>
+The `go_emot_subset_` files contains only the 9 most frequent labels:<br>
 `admiration, amusement, anger, annoyance, approval, curiosity, disapproval, gratitude, neutral`
+
+The `demo_four_class_` files contain 4 labels:<br>
+`amusement, disapproval, gratitude, neutral`
 
 The sentiment score was calculated using:<br>
 `from transformers import pipeline`<br>
