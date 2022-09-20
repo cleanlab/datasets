@@ -16,16 +16,24 @@ The sentiment score was calculated using:<br>
 `scr = sentiment["label"]`<br>
 `score = scr if label=="POSITIVE" else scr-1`<br>
 
-This ensures that very positive texts get scores closer to 1.0, very negative closer to 0.0, and neutral close to 0.5.
+This ensures that:
+* very positive: ~1.0
+* neutral: ~0.5
+* very negative: ~0.0
+
+
 # Data
 
-The data is split into two csv files, includes all annotations as well as metadata on the comments. The files includes the following columns:
+The data is split into a few csv files that include all annotations as well as metadata on the comments. 
 
 `go_emot_subset_train.csv` contains 25,106 samples<br>
 `go_emot_subset_test.csv` contains 2,815 samples<br>
+`demo_four_class_train.csv` contains 11,385 samples<br>
+`demo_four_class_test.csv` contains 1,328 samples<br>
+
 
 ### Data Format
-Both files contain 4 columns:
+All files contain 4 columns:
 * `comment_text`: The text of the comment, with masked tokens for names, private info, etc.
 * `sentiment`: Float in the range [0,1] calculated by HuggingFace sentiment analysis pipeline. Smaller number means more negative.
 * `label`: numerical label of the text, in range [0, 8]
