@@ -8,8 +8,6 @@ The `go_emot_subset_` files contains only the 9 most frequent labels:<br>
 The `demo_four_class_` files contain 4 labels:<br>
 `amusement, disapproval, gratitude, neutral`
 
-The `demo_neutral_class_` files contain only the neutral labels from `demo_four_class_`.
-
 The sentiment score was calculated using:<br>
 `from transformers import pipeline`<br>
 `pipe = pipeline("sentiment-analysis")`<br>
@@ -23,16 +21,16 @@ This ensures that:
 * neutral: ~0.5
 * very negative: ~0.0
 
+
 # Data
 
-The data is split into a few csv files that include annotations as well as metadata on the comments. 
+The data is split into a few csv files that include all annotations as well as metadata on the comments. 
 
 `go_emot_subset_train.csv` contains 25,106 samples<br>
 `go_emot_subset_test.csv` contains 2,815 samples<br>
 `demo_four_class_train.csv` contains 11,385 samples<br>
 `demo_four_class_test.csv` contains 1,328 samples<br>
-`demo_neutral_class_train.csv` contains 4,634 samples<br>
-`demo_neutral_class_test.csv` contains 488 samples
+
 
 ### Data Format
 All files contain 4 columns:
@@ -43,6 +41,6 @@ All files contain 4 columns:
 
 ## Limitations
 * `sentiment` is  purely derived from HuggingFace pipeline API. No work was done to train/test/verify this.
-* Reminder these are **subsets** of the original GoEmotions dataset
-* The `neutral` class has been randomly down-sampled to match the frequency of the nest most frequent class in the `demo_four_class_`files. Prior to this, the `neutral` class was significantly unbalanced. The `demo_neutral_class_` files contains the `neutral` subset.
+* Reminder this is a **subset** of the original GoEmotions dataset
+* The `neutral` class has been randomly down-sampled to match the frequency of the nest most frequent class. Prior to this, the `neutral` class was significantly unbalanced.
 * Those [limitations](https://github.com/google-research/google-research/blob/master/goemotions/README.md#disclaimer) inherited from original dataset.
